@@ -10,6 +10,10 @@ Dependencies (requires pip):
 
 `pip3 install beautifulsoup4`
 
+Test email/text functionality beforehand:
+
+`python3 mail_test.py`
+
 Type in terminal:
 
 `python3 detector.py`
