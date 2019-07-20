@@ -5,7 +5,7 @@ This python application is designed to constantly check ePost for mark updates. 
 **Set up the required constants before running**
 
 Type in terminal:
-`python3 scraper.py`
+`python3 detector.py`
 
 ## Setup
 If there is a \*, you must set up this constant to use the application.
