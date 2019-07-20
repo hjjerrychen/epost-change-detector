@@ -1,6 +1,6 @@
 # TODO: FILL IN THE FOLLOWING BEFORE RUNNING scraper.py
 
-# Put 'True' if course uses PRSIM account authentication, otherwise put 'False' for York Passport authentication
+# Put 'True' if course uses PRISM account authentication, otherwise put 'False' for York Passport authentication
 PRISM_AUTH = True
 # York Passport or PRISM account username
 USERNAME = "USERNAME"
