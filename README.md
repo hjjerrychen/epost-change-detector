@@ -4,7 +4,14 @@ This python application is designed to constantly check ePost for mark updates. 
 ## Usage
 **Set up the required constants before running**
 
+Dependencies (requires pip):
+
+`pip3 install requests`
+
+`pip3 install beautifulsoup4`
+
 Type in terminal:
+
 `python3 detector.py`
 
 ## Setup
