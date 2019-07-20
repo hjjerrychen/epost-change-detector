@@ -10,10 +10,10 @@ print(url)
 recipients = []
 if constants.NOTIFY_VIA_EMAIL: recipients = constants.EMAILS_TO_NOTIFY
 if constants.NOTIFY_VIA_TEXT: recipients.append(constants.PHONE_NUMBER + constants.CARRIER_GATEWAY)
-email_body = f"change detected. click on link to view marks:\n{url}"
+email_body = f"You set the email up correctly!\n click on link to view marks:\n{url}"
 
 message = MIMEText(email_body)
-message["Subject"] = f"MARKS UPDATED {constants.YEAR} {constants.TERM} {constants.COURSE}"
+message["Subject"] = f"Congrats!"
 message["From"] = constants.EMAIL
 message["To"] = ", ".join(recipients)
 
