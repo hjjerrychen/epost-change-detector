@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from requests.models import PreparedRequest
 
 def main():
+    print("ePost Change Dectector started: " + str(datetime.datetime.now().strftime("%a, %b %d, %Y  %l:%M:%S %p")))
     url = constants.PRISM_URL if constants.PRISM_AUTH else constants.YORK_PASSPORT_URL
     previous = get_grades(url)
     append_change_to_file(previous)
