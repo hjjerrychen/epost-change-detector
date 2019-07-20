@@ -17,8 +17,8 @@ In the file  `constants.py`:
 - \*`TERM` is the term of the course you wish to track. `F` for Fall term, `W` for Winter term or `S` for Summer term.
 - \*`COURSE` is the course you wish to track, exactly as how it is written in the dropdown menu on the ePost website.
 - \*`REFRESH_TIME` is the time interval the application will check for changes, in seconds.
-- `NOTIFY_VIA_EMAIL` allows you to select if you wish to receive a change notification email sent to emails in `EMAILS_TO_NOTIFY`. `True` for yes or `False` for no.
-- `NOTIFY_VIA_TEXT` allows you to select if you wish to receive a change notification text sent to the phone number in `PHONE_NUMBER`. `True` for yes or `False` for no.
+- `NOTIFY_VIA_EMAIL` allows you to select if you wish to receive a change notification email sent to emails in `EMAILS_TO_NOTIFY`. `True` for yes or `False` for no. Set to `False` by default.
+- `NOTIFY_VIA_TEXT` allows you to select if you wish to receive a change notification text sent to the phone number in `PHONE_NUMBER`. `True` for yes or `False` for no. Set to `False` by default.
 - `EMAIL` is the email address you wish to send the emails from. **This must be set up for both Email and Text notification methods.**
 - `EMAIL_PASSWORD` is the password of the email account you wish to send emails from.
 - `EMAIL_SMTP_SERVER` is the **SMTP** email server address of email provider.
