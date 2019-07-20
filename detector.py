@@ -17,7 +17,7 @@ def main():
         if current != previous:
             print("Change detected")
             append_change_to_file(current)
-            if constants.NOTIFY_VIA_EMAIL or constants.NOTIFY_VIA_TEXT: send_email(url)
+            if constants.NOTIFY_VIA_EMAIL or constants.NOTIFY_VIA_TEXT: send_email(url, current)
             previous = current
 
 def get_grades(url):
@@ -32,17 +32,18 @@ def append_change_to_file(data):
     file.write(data + "\n")
     file.close()
 
-def send_email(url):
+def send_email(url, text):
     req = PreparedRequest()
     req.prepare_url(url, constants.PAYLOAD)
     url = req.url
     recipients = []
     if constants.NOTIFY_VIA_EMAIL: recipients = constants.EMAILS_TO_NOTIFY
     if constants.NOTIFY_VIA_TEXT: recipients.append(constants.PHONE_NUMBER + constants.CARRIER_GATEWAY)
-    email_body = f"change detected. link to marks:\n{url}"
+    email_body = f"{str(datetime.datetime.now().strftime('%a, %b %d, %Y  %l:%M:%S %p'))}"
+    email_body += f"\nExtracted data:\n{text}\nLink to marks:\n{url}"
 
     message = MIMEText(email_body)
-    message["Subject"] = f"MARKS UPDATED {constants.YEAR} {constants.TERM} {constants.COURSE}"
+    message["Subject"] = f"MARKS UPDATED {constants.COURSE}"
     message["From"] = constants.EMAIL
     message["To"] = ", ".join(recipients)
 
