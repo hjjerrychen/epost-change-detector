@@ -1,13 +1,13 @@
 # epost-change-detector
 This python application is designed to constantly check ePost for mark updates. It was designed for devices such as the Raspberry Pi.
 
-### Usage
+## Usage
 **Set up the required constants before running**
 
 Type in terminal:
 `python3 scraper.py`
 
-### Setup
+## Setup
 If there is a \*, you must set up this constant to use the application.
 In the file  `constants.py`:
 - \*`PRISM_AUTH` allows you to select an authentication method (York Passport or PRISM account) depending on which one your course uses. `True` for PRISM account, `False` for York Passport.
@@ -28,9 +28,9 @@ In the file  `constants.py`:
 - `EMAILS_TO_NOTIFY` are the email(s) you wish to send a email notification to. It must be in array format, even if it is just one email address. 
 - `CHANGES_FILE_NAME` is the name of the file where changes are stored.
  
-## Sending Emails/Texts
+### Sending Emails/Texts
 - It is recommended to use a burner email account to send these notification emails.
 - The application uses email to send text messages. This requires your carrier to support the SMS gateway functionality. Most carriers support this feature free of charge. If the email notification feature does not work, then your text message notifications won't work as well.
 
-## Note
+### Note
 - Your credentials are stored without encryption in  `constants.py`. Take care to protect your data.
