@@ -1,5 +1,5 @@
 # epost-change-detector
-This python application is designed to constantly check ePost for mark updates. It was designed for devices such as the Raspberry Pi.
+This python application is designed to constantly check ePost for mark updates. Once an update is detected, it can record the change in a file and/or send email/text updates. It was designed for devices such as the Raspberry Pi.
 
 ## Usage
 **Set up the required constants before running**
