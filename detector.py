@@ -8,13 +8,29 @@ from bs4 import BeautifulSoup
 from requests.models import PreparedRequest
 
 def main():
-    print("ePost Change Dectector started: " + str(datetime.datetime.now().strftime("%a, %b %d, %Y  %l:%M:%S %p")))
-    url = constants.PRISM_URL if constants.PRISM_AUTH else constants.YORK_PASSPORT_URL
-    previous = get_grades(url)
-    append_change_to_file(previous)
+    try:
+        print("ePost Change Dectector started: " + str(datetime.datetime.now().strftime("%a, %b %d, %Y  %l:%M:%S %p")))
+        url = constants.PRISM_URL if constants.PRISM_AUTH else constants.YORK_PASSPORT_URL
+        previous = get_grades(url)
+        append_change_to_file(previous)
+    except Exception as exception:
+        print("----------------------------")
+        print (str(datetime.datetime.now().strftime("%a, %b %d, %Y  %l:%M:%S %p")))
+        print ("An error has occured: ")
+        print(exception)
+        print ("Did you try checking your internet connection or checking your credentials in constants.py?")
+        append_change_to_file(exception)
     while True:
         time.sleep(constants.REFRESH_TIME)
-        current = get_grades(url)
+        try:
+            current = get_grades(url)
+        except Exception as exception:
+            print("----------------------------")
+            print (str(datetime.datetime.now().strftime("%a, %b %d, %Y  %l:%M:%S %p")))
+            print ("Error: ")
+            print(exception)
+            print ("Did you try checking your internet connection?")
+            append_change_to_file(exception)
         if current != previous:
             print("Change detected")
             append_change_to_file(current)
